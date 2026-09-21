@@ -1,0 +1,292 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────────────
+   Design tokens — Caspian Properties by Nadia brand guide v2 (§2.4–2.8, §4.2)
+   Functional colours (stone-strong, muted, error, success) are documented
+   deviations: the brand palette has no accessible border or status colours.
+   ────────────────────────────────────────────────────────────────────── */
+@theme static {
+  --color-charcoal: #383838;
+  --color-bronze-light: #e9af8b;
+  --color-bronze: #ce7d51;
+  --color-bronze-deep: #9d4f2b;
+  --color-ivory: #f7f2ec;
+  --color-stone: #d8d1ca;
+  --color-stone-strong: #8a827b;
+  --color-ink: #1f1f1f;
+  --color-muted: #5c5652;
+  --color-error: #b42318;
+  --color-success: #2e6b3f;
+
+  --font-display: var(--font-cormorant), "Iowan Old Style", "Times New Roman", serif;
+  --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+  --font-rtl: var(--font-vazirmatn), "Noto Sans Arabic", Tahoma, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-card: 8px;
+  --shadow-card: 0 12px 32px rgb(31 31 31 / 0.08);
+  --container-content: 1200px;
+  --container-measure: 68ch;
+
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.625;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Persian & Arabic: Vazirmatn everywhere, body line-height ≥ 1.8 (brand guide §2.6). */
+  :root[dir="rtl"] body {
+    font-family: var(--font-rtl);
+    line-height: 1.85;
+    font-feature-settings: normal;
+  }
+
+  ::selection {
+    background: var(--color-bronze-light);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-bronze-deep);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .surface-dark :focus-visible {
+    outline-color: var(--color-bronze-light);
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Typography — brand scale (§2.6). Mobile sizes below 768 px.
+   ────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .type-display,
+  .type-h1,
+  .type-h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .type-display {
+    font-size: 2.75rem;
+    line-height: 3rem;
+  }
+  .type-h1 {
+    font-size: 2.375rem;
+    line-height: 2.75rem;
+  }
+  .type-h2 {
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+  }
+  @media (width >= 48rem) {
+    .type-display {
+      font-size: 4rem;
+      line-height: 4.25rem;
+    }
+    .type-h1 {
+      font-size: 3rem;
+      line-height: 3.375rem;
+    }
+  }
+  .type-h3 {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .type-lead {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+  .type-small {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+  .type-caption {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 500;
+  }
+
+  /* The Proof Label (§2.9): factual metadata, never promotional. */
+  .proof-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* RTL: Vazirmatn headings, slightly smaller, taller lines so marks never clip. */
+  :root[dir="rtl"] :is(.type-display, .type-h1, .type-h2, .type-h3) {
+    font-family: var(--font-rtl);
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  :root[dir="rtl"] .type-display {
+    font-size: 2.25rem;
+    line-height: 1.5;
+  }
+  :root[dir="rtl"] .type-h1 {
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+  :root[dir="rtl"] .type-h2 {
+    font-size: 1.875rem;
+    line-height: 1.5;
+  }
+  :root[dir="rtl"] .type-h3 {
+    font-size: 1.3125rem;
+    line-height: 1.6;
+  }
+  :root[dir="rtl"] .type-lead {
+    font-size: 1.1875rem;
+    line-height: 1.9;
+  }
+  :root[dir="rtl"] :is(.type-small, .type-caption) {
+    line-height: 1.8;
+  }
+  :root[dir="rtl"] .proof-label {
+    font-family: var(--font-rtl);
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+  @media (width >= 48rem) {
+    :root[dir="rtl"] .type-display {
+      font-size: 3.25rem;
+    }
+    :root[dir="rtl"] .type-h1 {
+      font-size: 2.625rem;
+    }
+  }
+
+  /* The Caspian Horizon (§2.9): one fine rule per composition. */
+  .horizon {
+    display: block;
+    height: 1px;
+    border: 0;
+    background: var(--color-bronze);
+  }
+  .surface-dark .horizon {
+    background: var(--color-bronze-light);
+  }
+
+  /* ── Buttons: sentence case, 48 px targets, colour pairs from §2.5 ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.25;
+    text-decoration: none;
+    transition:
+      background-color 160ms var(--ease-calm),
+      color 160ms var(--ease-calm),
+      border-color 160ms var(--ease-calm);
+    cursor: pointer;
+  }
+  .btn[aria-disabled="true"],
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .btn-primary {
+    background: var(--color-bronze-deep);
+    color: #ffffff;
+  }
+  .btn-primary:hover {
+    background: #86421f;
+  }
+  .btn-secondary {
+    border: 1px solid var(--color-bronze-deep);
+    color: var(--color-bronze-deep);
+    background: transparent;
+  }
+  .btn-secondary:hover {
+    background: var(--color-ivory);
+  }
+  .surface-dark .btn-primary {
+    background: var(--color-bronze-light);
+    color: var(--color-ink);
+  }
+  .surface-dark .btn-primary:hover {
+    background: #f0c3a6;
+  }
+  .surface-dark .btn-secondary {
+    border-color: var(--color-bronze-light);
+    color: var(--color-bronze-light);
+  }
+  .surface-dark .btn-secondary:hover {
+    background: rgb(233 175 139 / 0.1);
+  }
+
+  .link {
+    color: var(--color-bronze-deep);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: rgb(157 79 43 / 0.35);
+  }
+  .link:hover {
+    text-decoration-color: currentColor;
+  }
+  .surface-dark .link {
+    color: var(--color-bronze-light);
+    text-decoration-color: rgb(233 175 139 / 0.45);
+  }
+
+  /* Directional arrow glyphs flip in RTL. */
+  :root[dir="rtl"] .flip-rtl {
+    transform: scaleX(-1);
+  }
+
+  /* The Nadia Frame (§2.9): one cut corner per page. */
+  .nadia-frame {
+    clip-path: polygon(0 0, calc(100% - 3rem) 0, 100% 3rem, 100% 100%, 0 100%);
+  }
+  :root[dir="rtl"] .nadia-frame {
+    clip-path: polygon(3rem 0, 100% 0, 100% 100%, 0 100%, 0 3rem);
+  }
+}

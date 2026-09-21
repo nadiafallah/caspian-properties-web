@@ -1,0 +1,613 @@
+{
+  "Metadata": {
+    "siteName": "Caspian Properties by Nadia",
+    "home": {
+      "title": "Caspian Properties by Nadia — Dubai property advice for families and investors",
+      "description": "Evidence-led Dubai property advice from Nadia Fallah, backed by Caspian Properties Brokers LLC since 2007. Off-plan, resale, leasing and holiday-home purchase advice."
+    },
+    "about": {
+      "title": "About Nadia and Caspian Properties",
+      "description": "Nadia Fallah is a Dubai real estate advisor with Caspian Properties Brokers LLC, a brokerage licensed in Dubai since 2007. Verify her broker registration."
+    },
+    "approach": {
+      "title": "How I advise",
+      "description": "The Nadia Advisory Method: Discover, Diagnose, Decide, Deliver. Clarity before property, with every recommendation sourced, dated and explained."
+    },
+    "journey": {
+      "title": "Client journey",
+      "description": "What to expect when buying, selling or leasing Dubai property with Nadia — from first brief to handover, with documents and privacy explained."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Contact Nadia Fallah at Caspian Properties by Nadia. Start with a private consultation in English or Persian."
+    },
+    "consultation": {
+      "title": "Book a private consultation",
+      "description": "Two short steps, then choose a time from Nadia’s live calendar. Private, evidence-led Dubai property advice."
+    },
+    "thankYou": {
+      "title": "Consultation booked",
+      "description": "Your private consultation with Nadia is booked."
+    },
+    "opportunities": {
+      "title": "Curated opportunities",
+      "description": "Selected Dubai property opportunities, each shown with its source, date and the reason it may fit."
+    },
+    "insights": {
+      "title": "Market intelligence",
+      "description": "Source-dated Dubai property market updates and decision guides from Nadia."
+    },
+    "privacy": {
+      "title": "Privacy notice",
+      "description": "How Caspian Properties by Nadia collects, uses and protects the information you share through this website."
+    },
+    "terms": {
+      "title": "Terms of use",
+      "description": "Terms of use and disclaimer for the Caspian Properties by Nadia website."
+    },
+    "notFound": {
+      "title": "Page not found"
+    }
+  },
+  "Common": {
+    "skipToContent": "Skip to main content",
+    "bookConsultation": "Book a private consultation",
+    "seeHowIAdvise": "See how I advise",
+    "tagline": "Rooted in Legacy. Led by Nadia.",
+    "promise": "Clarity before property.",
+    "since2007": "Since 2007",
+    "opensInNewTab": "(opens in a new tab)",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "languageSwitcher": "Choose language",
+    "placeholderPhoto": "Photography placeholder — approved image required",
+    "placeholderPortrait": "Portrait placeholder — approved photo of Nadia required",
+    "contentNeeded": "Content needed",
+    "lastUpdated": "Last updated {date}",
+    "backToHome": "Back to home",
+    "brandHome": "Caspian Properties by Nadia — home",
+    "advisorRole": "Real Estate Advisor"
+  },
+  "Nav": {
+    "about": "About",
+    "approach": "How I advise",
+    "journey": "Client journey",
+    "contact": "Contact",
+    "mainLabel": "Main",
+    "footerLabel": "Footer",
+    "legalLabel": "Legal"
+  },
+  "Home": {
+    "hero": {
+      "title": "Dubai property advice built around your family’s future.",
+      "lead": "Evidence-led guidance. Relationship-led access. One accountable advisor, backed by Caspian Properties since 2007."
+    },
+    "trust": {
+      "label": "At a glance",
+      "since": "Operating in Dubai since 2007",
+      "company": "Caspian Properties Brokers LLC",
+      "orn": "RERA-registered brokerage · ORN {orn}",
+      "brn": "Nadia Fallah · BRN {brn}",
+      "languages": "Advice in English and فارسی"
+    },
+    "intro": {
+      "eyebrow": "Meet Nadia",
+      "title": "Clarity before property.",
+      "p1": "Dubai offers an extraordinary range of property opportunities. The challenge is knowing which one belongs in your plan.",
+      "p2": "I combine market evidence, long-standing relationships and one accountable advisory process to help you decide with clarity — from first conversation to handover and beyond.",
+      "p3": "I work especially closely with Persian-speaking and internationally mobile families who want more than a project pitch.",
+      "link": "About Nadia and Caspian"
+    },
+    "method": {
+      "eyebrow": "The Nadia Advisory Method",
+      "title": "Four stages. One accountable advisor.",
+      "lead": "We begin with your objective, timeline and risk profile. Property options come after the brief.",
+      "link": "How I advise, in detail"
+    },
+    "services": {
+      "eyebrow": "Advisory services",
+      "title": "Advice for the decision in front of you",
+      "lead": "Each service starts with your brief. Inventory comes later — and only when it fits."
+    },
+    "legacy": {
+      "eyebrow": "Since 2007",
+      "title": "A personal advisor, backed by a Dubai brokerage legacy.",
+      "body": "Clients trust a person, but they also need the reassurance of a licensed, established business. I am your visible, accountable advisor. Caspian Properties Brokers LLC — licensed in Dubai since 2007 — provides the continuity, developer relationships and systems behind my work.",
+      "quote": "Access matters. Judgement matters more."
+    },
+    "lenses": {
+      "eyebrow": "Decisions made together",
+      "title": "Two lenses, one decision",
+      "lead": "Major property decisions are rarely made alone. I make sure both perspectives are answered on the same page.",
+      "capitalTitle": "The capital lens",
+      "capitalQuestions": "What is the downside? What makes this liquid? Why this option and not the alternative? What is the developer’s record?",
+      "familyTitle": "The family lens",
+      "familyQuestions": "Is the location liveable? What is the community like? How will schooling, access, handover and day-to-day use work?",
+      "closing": "The right property is the one that fits the capital, the timeline and the life behind both."
+    },
+    "journey": {
+      "eyebrow": "Client journey",
+      "title": "What working together looks like",
+      "link": "See the full client journey"
+    },
+    "invite": {
+      "eyebrow": "Private consultation",
+      "title": "Start with a private conversation",
+      "body": "Share a few details about your goals, then choose a time that suits you. Your information is used only to prepare for our conversation.",
+      "stepsLabel": "How it works",
+      "response": "Nadia or her team will reply within one business day."
+    }
+  },
+  "Method": {
+    "receives": "You receive",
+    "stage": "Stage {number}",
+    "discover": {
+      "title": "Discover",
+      "summary": "Goals, family context, constraints and time horizon.",
+      "detail": "We clarify the objective, budget, timeline, risk tolerance, intended use, liquidity needs and who is involved in the decision. No project is recommended before the brief is agreed.",
+      "output": "A concise decision brief"
+    },
+    "diagnose": {
+      "title": "Diagnose",
+      "summary": "Market fit, risks, trade-offs and suitable strategies.",
+      "detail": "I determine which strategy and locations fit the brief — off-plan, ready, income, growth, end use, or a deliberate decision to wait — and explain the market context and constraints.",
+      "output": "A strategy note and comparison criteria"
+    },
+    "decide": {
+      "title": "Decide",
+      "summary": "Compare options using transparent evidence.",
+      "detail": "We build a disciplined shortlist and compare fit, developer record, payment structure, total cost, risk, lifestyle and exit considerations. You see the reason behind every recommendation.",
+      "output": "A shortlist and decision scorecard"
+    },
+    "deliver": {
+      "title": "Deliver",
+      "summary": "Coordinate the transaction and support the next steps.",
+      "detail": "I coordinate reservation, required checks, documents, transaction parties, updates, handover and the agreed post-purchase plan. Compliance requests are explained early and handled through approved company processes.",
+      "output": "A transaction roadmap and milestone updates"
+    }
+  },
+  "Services": {
+    "offPlan": {
+      "name": "Off-plan advisory",
+      "question": "Is buying before completion right for our timeline and capital?",
+      "body": "Compare developer track record, payment plan, total cost and handover risk before committing to a launch."
+    },
+    "resale": {
+      "name": "Resale advisory",
+      "question": "Should we buy a ready property now?",
+      "body": "Assess value, condition, service charges, liquidity and exit options for completed homes and investments."
+    },
+    "leasing": {
+      "name": "Leasing advisory",
+      "question": "Where should we rent — or how should we let our property?",
+      "body": "Brief-led guidance for tenants and landlords, with every step of the leasing process explained."
+    },
+    "holidayHome": {
+      "name": "Holiday-home investment advisory",
+      "question": "Could a property work as a holiday home?",
+      "body": "Evaluate location, costs, permits and realistic income assumptions before you buy. My role is purchase advice; letting and operation sit with separately licensed providers."
+    }
+  },
+  "Pillars": {
+    "continuity": {
+      "title": "Continuity",
+      "body": "Caspian Properties has operated in Dubai since 2007."
+    },
+    "accountability": {
+      "title": "Accountability",
+      "body": "I remain your visible lead throughout the relationship."
+    },
+    "access": {
+      "title": "Access",
+      "body": "Developer and market relationships support better information and execution."
+    },
+    "evidence": {
+      "title": "Evidence",
+      "body": "Recommendations state the source, date, assumptions and trade-offs."
+    },
+    "navigation": {
+      "title": "Navigation",
+      "body": "You see the full path — due diligence, documents, handover and what comes next."
+    }
+  },
+  "Journey": {
+    "brief": {
+      "title": "Fit and brief",
+      "summary": "Objectives, budget, intended use, timeline and decision-makers — confirmed in writing.",
+      "p1": "Objectives, budget, intended use, timeline and decision-makers",
+      "p2": "Your preferred language and communication channel",
+      "p3": "A summary sent to you for confirmation"
+    },
+    "strategy": {
+      "title": "Strategy and shortlist",
+      "summary": "Strategy options, comparable communities and projects, and source-dated facts with a total-cost view.",
+      "p1": "Strategy options and the key trade-offs",
+      "p2": "Comparable communities and projects",
+      "p3": "Source-dated facts, a total-cost view and material risk notes"
+    },
+    "readiness": {
+      "title": "Due diligence and readiness",
+      "summary": "Document requests explained early; relevant contracts and property documents organised for review.",
+      "p1": "Identity and compliance document requests explained early",
+      "p2": "Customer due diligence and source-of-funds information handled only through approved company processes",
+      "p3": "Where independent legal, tax, mortgage or immigration advice is needed, I say so clearly and refer you appropriately"
+    },
+    "transaction": {
+      "title": "Reservation and transaction",
+      "summary": "Price, payment schedule, fees, signatories and deadlines confirmed in writing, with milestone updates.",
+      "p1": "Price, payment schedule, fees, signatories and deadlines confirmed in writing",
+      "p2": "The responsible party recorded for each action",
+      "p3": "Milestone updates — even when there is no change"
+    },
+    "ownership": {
+      "title": "Handover and ownership plan",
+      "summary": "Handover, snagging, registration, leasing or management, and your next review.",
+      "p1": "Handover, snagging, registration, and leasing or management",
+      "p2": "A clear note of what I continue to support and what sits with another provider",
+      "p3": "A date for your next review"
+    }
+  },
+  "About": {
+    "eyebrow": "About",
+    "title": "A trusted personal advisor, backed by a Dubai real estate legacy since 2007.",
+    "lead": "I lead the relationship. Caspian Properties Brokers LLC provides the corporate foundation, market history and operating credibility behind my work.",
+    "nadiaTitle": "Nadia",
+    "nadiaRole": "Real Estate Advisor, Caspian Properties Brokers LLC",
+    "nadiaP1": "I’m Nadia, a Dubai real estate advisor with Caspian Properties. I work especially closely with Persian-speaking and internationally mobile families who want more than a project pitch.",
+    "nadiaP2": "We define the goal, compare the right strategies and document the reasoning, risks and next steps — so the property fits both the capital and the life behind it.",
+    "bioNeeded": "Nadia’s biography",
+    "missionTitle": "Mission",
+    "mission": "To help families and internationally minded investors make clear, evidence-led Dubai property decisions that protect capital, support long-term growth and create a life they are proud to build.",
+    "valuesTitle": "What guides my advice",
+    "values": {
+      "integrity": {
+        "title": "Integrity",
+        "body": "Your long-term interest comes before the pressure to close."
+      },
+      "mastery": {
+        "title": "Local mastery",
+        "body": "Advice grounded in current, first-hand knowledge of Dubai’s communities, transaction mechanics and market cycles."
+      },
+      "access": {
+        "title": "Trusted access",
+        "body": "Relationships built through Caspian Properties create useful access to people, information and opportunities — never manufactured urgency."
+      },
+      "family": {
+        "title": "Family-first vision",
+        "body": "Property is evaluated as part of a family’s future, not as an isolated purchase."
+      },
+      "discretion": {
+        "title": "Discretion",
+        "body": "Privacy is a form of premium service. I collect only what advice, compliance or execution requires."
+      }
+    },
+    "caspianTitle": "Caspian Properties Brokers LLC",
+    "caspianBody": "Caspian Properties is the brokerage behind my work. Licensed in Dubai since 2007 for real estate buying and selling brokerage and leasing brokerage, it provides market continuity, developer relationships, systems and history — so you work with one accountable advisor, supported by an established company.",
+    "facts": {
+      "legalName": "Legal name",
+      "licence": "Commercial licence (Dubai DET)",
+      "established": "Established",
+      "activities": "Licensed activities",
+      "activitiesValue": "Real estate buying and selling brokerage; leasing property brokerage",
+      "orn": "RERA office registration (ORN)"
+    }
+  },
+  "Credentials": {
+    "eyebrow": "Licence & registration",
+    "title": "Verify before you trust",
+    "lead": "You should be able to confirm who you are dealing with. These registrations can be checked independently through the Dubai Land Department’s licence verification service.",
+    "broker": "Registered broker",
+    "brn": "Broker registration number (BRN)",
+    "brokerage": "Brokerage",
+    "orn": "Office registration number (ORN)",
+    "validUntil": "Broker card valid until {date}",
+    "verifyCta": "Verify with the Dubai Land Department",
+    "previewTitle": "Broker card preview",
+    "previewAlt": "Watermarked preview of Nadia Fallah’s DLD broker card, for verification on caspian-properties.com only",
+    "previewNote": "A reduced, watermarked preview for verification on this website only. For official confirmation, use the Dubai Land Department service."
+  },
+  "Approach": {
+    "eyebrow": "How I advise",
+    "title": "Clarity before property.",
+    "lead": "I understand your objectives, constraints and decision dynamics before presenting inventory. Every recommendation includes the reason it fits, the material risks, the evidence behind it and the next sensible step.",
+    "evidenceTitle": "The evidence standard",
+    "evidenceLead": "Any claim about price, yield, supply, payment plan, handover or developer performance should show:",
+    "evidence": {
+      "source": "The source",
+      "date": "The date or reporting period",
+      "type": "Whether the number is asking, registered, forecast or illustrative",
+      "scope": "The relevant geography and property type",
+      "assumptions": "Any assumption that materially affects the conclusion"
+    },
+    "principlesTitle": "What I will not do",
+    "principles": {
+      "guarantees": "Promise guaranteed or unrealistic returns.",
+      "urgency": "Manufacture urgency or countdowns to push a decision.",
+      "exclusive": "Call access “exclusive” unless exclusivity is documented.",
+      "publish": "Publish your name, image, property or transaction without your specific written permission.",
+      "pressure": "Play one decision-maker against another."
+    },
+    "quote": "Every number needs a source. Every recommendation needs a reason."
+  },
+  "JourneyPage": {
+    "eyebrow": "Client journey",
+    "title": "From first brief to handover — and beyond.",
+    "lead": "One accountable advisor through every stage. This is the path you can expect.",
+    "note": "This describes the experience you can expect. It is not a substitute for legal or brokerage compliance procedures.",
+    "privacyTitle": "Your information",
+    "privacyBody": "At first contact I ask only for what is needed to prepare our conversation. This website never asks for passports, identity documents or financial statements.",
+    "faqTitle": "Questions clients ask",
+    "faq": {
+      "pitch": {
+        "q": "Is the first consultation a sales pitch?",
+        "a": "No. The first conversation is about your objectives, constraints and timeline. Property options come after we agree the brief — and sometimes the right advice is to wait."
+      },
+      "abroad": {
+        "q": "Can we work together from outside the UAE?",
+        "a": "Yes. Much of the advisory process can be handled remotely, with one accountable advisor and structured updates across time zones."
+      },
+      "languages": {
+        "q": "Which languages do you advise in?",
+        "a": "English and Persian."
+      },
+      "documents": {
+        "q": "What will you ask me for, and when?",
+        "a": "At first contact, only the basics needed to prepare our conversation. Identity and compliance documents are requested later, explained in advance, and handled through approved company processes."
+      },
+      "otherAdvice": {
+        "q": "Do you provide legal, tax or mortgage advice?",
+        "a": "No. Where independent legal, tax, mortgage or immigration advice is needed, I will say so clearly and refer you appropriately."
+      },
+      "publication": {
+        "q": "Will you publish anything about me or my purchase?",
+        "a": "Never without your specific written permission for that exact use."
+      }
+    }
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Let’s talk about your plans",
+    "lead": "The best first step is a private consultation. Tell me a little about your goals, then choose a time from my calendar.",
+    "cardTitle": "Private consultation",
+    "cardBody": "A short two-step form, then live availability from my calendar.",
+    "directTitle": "Direct contact",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "instagram": "Instagram",
+    "office": "Office",
+    "languages": "Consultations are available in English and Persian.",
+    "detailsNeeded": "Public phone, WhatsApp and email"
+  },
+  "Consultation": {
+    "eyebrow": "Private consultation",
+    "title": "Book a private consultation",
+    "lead": "Two short steps, then choose a time that suits you. It takes about three minutes.",
+    "noScript": "This form needs JavaScript. You can still reach us directly on Instagram.",
+    "languageHint": "Prefer to continue in another language?",
+    "arabicNote": "Consultations are currently held in English or Persian.",
+    "progress": "Step {current} of {total}",
+    "steps": {
+      "about": "About you",
+      "goals": "Your property goals",
+      "schedule": "Choose a time"
+    },
+    "optional": "optional",
+    "fields": {
+      "fullName": "Full name",
+      "email": "Email",
+      "emailHint": "Your booking confirmation will be sent here.",
+      "phone": "Phone number",
+      "phoneHint": "Include your country code, for example +971 50 123 4567.",
+      "phoneRequiredHint": "Needed for phone or WhatsApp contact.",
+      "location": "Where are you based?",
+      "locationHint": "Country and city",
+      "consultationLanguage": "Preferred consultation language",
+      "contactChannel": "How should we contact you?",
+      "interest": "What are you mainly interested in?",
+      "purpose": "Main purpose",
+      "budget": "Approximate budget",
+      "budgetRent": "Approximate annual rent budget",
+      "budgetHint": "In UAE dirhams (AED). A range is enough.",
+      "timeline": "When do you expect to decide?",
+      "decisionMakers": "Who else is involved in the decision?",
+      "notes": "Anything you’d like me to know?",
+      "notesHint": "Please don’t include passport, ID or bank details.",
+      "notesCounter": "{count} of {max} characters",
+      "referral": "How did you hear about Nadia?",
+      "consent": "I agree that my information may be used to respond to my enquiry and prepare my consultation, as described in the <link>privacy notice</link>.",
+      "honeypot": "Leave this field empty"
+    },
+    "options": {
+      "language": {
+        "en": "English",
+        "fa": "فارسی (Persian)",
+        "ar": "العربية (Arabic)"
+      },
+      "channel": {
+        "email": "Email",
+        "phone": "Phone call",
+        "whatsapp": "WhatsApp"
+      },
+      "interest": {
+        "off-plan": "Off-plan property",
+        "resale": "Ready (resale) property",
+        "leasing": "Leasing",
+        "holiday-home": "Holiday-home investment",
+        "not-sure": "Not sure yet"
+      },
+      "purpose": {
+        "investment": "Investment",
+        "end-use": "A home to live in",
+        "relocation": "Relocating to Dubai",
+        "family-planning": "Family planning",
+        "diversification": "Portfolio diversification",
+        "other": "Other"
+      },
+      "budget": {
+        "under-1m": "Under AED 1M",
+        "1m-2m": "AED 1M – 2M",
+        "2m-3500k": "AED 2M – 3.5M",
+        "3500k-5m": "AED 3.5M – 5M",
+        "5m-10m": "AED 5M – 10M",
+        "over-10m": "Over AED 10M",
+        "rent-under-100k": "Under AED 100K a year",
+        "rent-100k-200k": "AED 100K – 200K a year",
+        "rent-200k-350k": "AED 200K – 350K a year",
+        "rent-350k-500k": "AED 350K – 500K a year",
+        "rent-over-500k": "Over AED 500K a year",
+        "prefer-not": "I’d rather discuss it in the consultation"
+      },
+      "timeline": {
+        "within-3m": "Within 3 months",
+        "3-6m": "In 3–6 months",
+        "6-12m": "In 6–12 months",
+        "over-12m": "In more than 12 months",
+        "exploring": "Just exploring for now"
+      },
+      "decisionMakers": {
+        "just-me": "Just me",
+        "partner": "My spouse or partner",
+        "family": "Other family members",
+        "advisors": "Other advisors"
+      },
+      "referral": {
+        "instagram": "Instagram",
+        "referral": "A friend or client",
+        "search": "Online search",
+        "event": "An event",
+        "other": "Other"
+      },
+      "choose": "Choose an option"
+    },
+    "privacyNote": "Your details are stored securely and used only to prepare your consultation. We never ask for identity or financial documents through this website.",
+    "actions": {
+      "continue": "Continue",
+      "back": "Back",
+      "submit": "Continue to scheduling",
+      "submitting": "Saving your details…",
+      "retry": "Try again"
+    },
+    "errors": {
+      "summaryTitle": "Please check the following:",
+      "fullName": "Please enter your full name.",
+      "email": "Please enter a valid email address.",
+      "phone": "Please enter a phone number with country code, starting with +.",
+      "phoneRequired": "Please add a phone number so we can call or message you.",
+      "location": "Please keep this under 120 characters.",
+      "choose": "Please choose an option.",
+      "notes": "Please keep this under 1,000 characters.",
+      "consent": "Please confirm your agreement so we can respond."
+    },
+    "status": {
+      "invalid": "Some answers need attention.",
+      "rateLimited": "You’ve sent several requests in a short time. Please wait a few minutes, or contact us directly.",
+      "unavailable": "We couldn’t save your details just now. Your answers are still here — please try again, or contact us directly.",
+      "rejected": "We couldn’t submit this request. Please contact us directly.",
+      "network": "The connection was interrupted. Your answers are still here — please try again."
+    },
+    "saved": "Thank you, {name}. Your details are saved.",
+    "scheduler": {
+      "title": "Choose a time",
+      "lead": "Live availability from Nadia’s calendar. Times are shown in your time zone.",
+      "loading": "Loading available times…",
+      "providerNote": "The scheduling calendar is provided by Cal.com and may appear in English.",
+      "fallbackTitle": "Calendar not loading?",
+      "fallbackBody": "You can open the booking page directly, or contact us instead.",
+      "fallbackCta": "Open the booking page",
+      "notConfigured": "Online scheduling is being set up. Nadia or her team will contact you to arrange a time.",
+      "noScript": "The scheduling calendar needs JavaScript. Please open the booking page directly."
+    },
+    "direct": {
+      "title": "Prefer to talk directly?",
+      "body": "You can also reach us on:",
+      "unavailable": "Direct contact details will be published shortly. Meanwhile, you can message us on Instagram."
+    }
+  },
+  "ThankYou": {
+    "eyebrow": "Consultation booked",
+    "title": "Thank you — your consultation is booked.",
+    "lead": "Cal.com will email your confirmation and calendar invitation.",
+    "nextTitle": "What happens next",
+    "next1": "I review your brief before we speak.",
+    "next2": "We meet at the time you chose. You can reschedule or cancel with the link in your confirmation email.",
+    "next3": "After our conversation, you receive a concise summary and the next sensible step."
+  },
+  "Opportunities": {
+    "eyebrow": "Opportunities",
+    "title": "Curated opportunities",
+    "lead": "Selected properties and strategies, each shown with its source, date and the reason it may fit.",
+    "emptyTitle": "Curation in progress",
+    "emptyBody": "Opportunities are published only when every fact is verified and every required permit is in place. In the meantime, a private consultation is the best way to discuss current options."
+  },
+  "Insights": {
+    "eyebrow": "Market intelligence",
+    "title": "Market intelligence",
+    "lead": "Source-dated market updates and decision guides.",
+    "emptyTitle": "First insights coming soon",
+    "emptyBody": "Every article here will show its sources and dates. Until the first one is published, a private consultation is the best way to discuss the current market."
+  },
+  "Privacy": {
+    "eyebrow": "Legal",
+    "title": "Privacy notice",
+    "intro": "This notice explains what information this website collects, why, and how it is handled. It describes how the website is actually set up.",
+    "whoTitle": "Who we are",
+    "whoBody": "This website is operated for Nadia Fallah, Real Estate Advisor, and Caspian Properties Brokers LLC, a real estate brokerage licensed in Dubai (commercial licence 595102). To ask about your information, please use the details on our <link>contact page</link>.",
+    "collectTitle": "What we collect",
+    "collectBody": "When you request a consultation, we collect the details you enter: your name, email address, phone number (if you choose phone or WhatsApp contact), where you are based, your preferred language and contact channel, your property interest, purpose, approximate budget range, decision timeline, who else is involved in the decision, any notes you add, and how you heard about Nadia. We also record the page you came from, campaign tags in the link you used (if any), the website language you used, and the date, time and version of the consent you gave.",
+    "notCollected": "We do not ask for passports, identity documents, bank details or financial statements through this website.",
+    "useTitle": "How we use it",
+    "useBody": "To respond to your enquiry, prepare for and hold your consultation, and follow up as you agreed. We do not sell your information or use it for unrelated marketing.",
+    "servicesTitle": "Services that process your information",
+    "services": {
+      "google": "Google (Google Sheets and Google Calendar) stores consultation requests and appointment details.",
+      "cal": "Cal.com shows available times and manages your booking, confirmation, rescheduling and cancellation. When you book, Cal.com receives the details you enter in its booking form.",
+      "vercel": "Vercel hosts this website and provides visitor statistics that do not use cookies.",
+      "upstash": "Upstash briefly stores a one-way (hashed) form of your IP address to limit repeated submissions and prevent spam. These records expire automatically."
+    },
+    "servicesNote": "These providers may process information outside the UAE.",
+    "cookiesTitle": "Cookies and browser storage",
+    "cookiesBody": "This website does not use advertising or tracking cookies. When the scheduling calendar loads, Cal.com may use cookies or similar storage that booking needs to work. While you fill in the consultation form, your answers are kept in your browser for the current session only, so they are not lost if you change language or reload; they are removed when you submit the form or close the tab.",
+    "retentionTitle": "How long we keep it",
+    "retentionBody": "We keep enquiry and booking records only as long as needed for the purposes above and to meet the brokerage’s legal and regulatory obligations. Rate-limiting records expire within 24 hours.",
+    "rightsTitle": "Your choices",
+    "rightsBody": "You can ask us to access, correct or delete your information, or withdraw your consent, at any time by contacting us. Withdrawing consent does not affect anything done before you withdrew it.",
+    "securityTitle": "Security",
+    "securityBody": "Consultation records are kept in access-controlled systems and are available only to Nadia and authorised Caspian Properties staff who need them.",
+    "changesTitle": "Changes to this notice",
+    "changesBody": "If the way we handle information changes, we will update this notice and the date shown above."
+  },
+  "Terms": {
+    "eyebrow": "Legal",
+    "title": "Terms of use",
+    "intro": "By using this website, you agree to these terms.",
+    "infoTitle": "Information only",
+    "infoBody": "Content on this website is general information about Dubai property and our advisory approach. It is not legal, tax, financial, mortgage or immigration advice, and it is not an offer or solicitation for any specific property.",
+    "noGuaranteeTitle": "No guaranteed outcomes",
+    "noGuaranteeBody": "Property prices, rents and returns can go down as well as up. Figures on this website are shown with their source and date, and forecasts are labelled as forecasts. No return is guaranteed.",
+    "thirdPartyTitle": "Third-party information",
+    "thirdPartyBody": "Some information, such as developer payment plans or project details, comes from third parties. We state the source and date, but we cannot guarantee that third-party information remains accurate.",
+    "licensingTitle": "Licensing",
+    "licensingBody": "Real estate brokerage services are provided by Caspian Properties Brokers LLC, Dubai, UAE — commercial licence 595102, RERA office registration (ORN) 557. Nadia Fallah is a registered broker, BRN 70350.",
+    "linksTitle": "External links",
+    "linksBody": "Links to other websites are provided for convenience. We are not responsible for their content.",
+    "ipTitle": "Content and trademarks",
+    "ipBody": "The Caspian Properties by Nadia name, logo and website content belong to Caspian Properties Brokers LLC and may not be reused without permission.",
+    "changesTitle": "Changes",
+    "changesBody": "We may update these terms from time to time. The date of the latest version is shown above."
+  },
+  "Footer": {
+    "company": "Caspian Properties Brokers LLC · Commercial licence {licence} (Dubai DET) · ORN {orn}",
+    "advisor": "Nadia Fallah · Real Estate Advisor · BRN {brn}",
+    "disclaimer": "Information on this website is general and informational. It is not legal, tax or financial advice. Property values and income can fall as well as rise; no return is guaranteed.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "verify": "Verify our licence",
+    "copyright": "© {year} Caspian Properties Brokers LLC"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "body": "The page you’re looking for doesn’t exist or has moved."
+  }
+}

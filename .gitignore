@@ -1,0 +1,36 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+/playwright-report
+/test-results
+/blob-report
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+
+# env files — real secrets never go into git; .env.example is the template
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# local-only source documents (licence PDFs etc.) — never commit originals
+/private/
