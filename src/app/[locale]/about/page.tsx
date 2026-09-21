@@ -83,8 +83,8 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <p className="proof-label text-bronze-deep">{tCommon("since2007")}</p>
-            <h2 id="caspian-title" className="type-h2 mt-4" dir="ltr">
-              {t("caspianTitle")}
+            <h2 id="caspian-title" className="type-h2 mt-4">
+              <bdi dir="ltr">{t("caspianTitle")}</bdi>
             </h2>
             <p className="mt-6 max-w-measure text-charcoal">{t("caspianBody")}</p>
           </div>
@@ -92,8 +92,8 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
             {facts.map((fact) => (
               <div key={fact.label} className="border-b border-stone px-6 py-4 last:border-b-0">
                 <dt className="type-small text-muted">{fact.label}</dt>
-                <dd className="mt-1 font-medium text-ink" dir={fact.ltr ? "ltr" : undefined}>
-                  {fact.value}
+                <dd className="mt-1 font-medium text-ink">
+                  {fact.ltr ? <bdi dir="ltr">{fact.value}</bdi> : fact.value}
                 </dd>
               </div>
             ))}

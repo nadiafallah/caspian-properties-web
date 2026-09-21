@@ -4,7 +4,7 @@ The advisory website for **caspian-properties.com**, in English (the entry langu
 
 It introduces Nadia and Caspian Properties (since 2007), explains how Nadia advises, and turns suitable visitors into private consultations. Visitors fill in a short two-step form, the details go to a Google Sheet, and then they choose a time in Nadia’s Cal.com calendar, which is connected to Google Calendar.
 
-> **Current state:** a complete, tested **preview**. It still needs real photos, the biography, public contact details and the service connections. See [docs/CONTENT_INVENTORY.md](docs/CONTENT_INVENTORY.md) and [docs/LAUNCH_CHECKLIST.md](docs/LAUNCH_CHECKLIST.md). Nothing has been deployed.
+> **Current state:** live at **https://caspian-properties-web.vercel.app** (Vercel production, launch stage, hidden from search engines). It still needs real photos, the biography, public contact details and the service connections (Cal.com, Google Sheets, Upstash). Until Google Sheets is connected, the form honestly reports that it could not save. See [docs/CONTENT_INVENTORY.md](docs/CONTENT_INVENTORY.md) and [docs/LAUNCH_CHECKLIST.md](docs/LAUNCH_CHECKLIST.md). The `caspian-properties.com` domain is not connected yet.
 
 ## What you need
 
@@ -66,13 +66,14 @@ The browser tests use a fake Cal.com and a temporary store. They never create re
 
 Step-by-step instructions for Cal.com + Google Calendar, Google Sheets, Upstash and analytics are in [docs/INTEGRATIONS.md](docs/INTEGRATIONS.md). Never paste passwords, keys or secrets into chat or code; put them in `.env.local` or in Vercel’s Environment Variables.
 
-## Deploying (only after approval)
+## Deploying
 
-1. Push this folder to a private GitHub repository.
-2. On vercel.com: **Add New → Project → import the repository**. Vercel detects Next.js; no build settings needed.
-3. Add the environment variables from `.env.example` for Preview (test Sheet, `NEXT_PUBLIC_SITE_STAGE=preview`).
-4. Every push creates a preview link. Review it in all three languages.
-5. Production and the `caspian-properties.com` domain: follow [docs/LAUNCH_CHECKLIST.md §E](docs/LAUNCH_CHECKLIST.md#e-hosting-and-domain), including keeping your email DNS records untouched.
+The code is in the private GitHub repository `nadiafallah/caspian-properties-web`, connected to the Vercel project `caspian-properties-web` (team “nadia”, Hobby plan).
+
+- **Every push to `main` goes live on production automatically.** Push other branches to get a private preview link first.
+- Production environment variables: Vercel → Project → Settings → Environment Variables. Production uses `NEXT_PUBLIC_SITE_STAGE=launch` and `NEXT_PUBLIC_ALLOW_INDEXING=false`; Preview keeps its own values. After changing a variable, redeploy (Deployments → ⋯ → Redeploy).
+- Only the main address is public. Individual deployment links (`caspian-properties-…-nadia-ea59.vercel.app`) ask for a Vercel login (Deployment Protection, “Standard”), so share the main address.
+- The `caspian-properties.com` domain: follow [docs/LAUNCH_CHECKLIST.md §E](docs/LAUNCH_CHECKLIST.md#e-hosting-and-domain), including keeping your email DNS records untouched.
 
 **Rollback:** Vercel → Deployments → pick the previous one → *Promote to Production*.
 

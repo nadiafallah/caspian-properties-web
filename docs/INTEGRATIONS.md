@@ -8,7 +8,7 @@ Every service uses a free plan. None of them is live until you complete the step
 | Google Calendar | Nadia’s real availability, connected *inside Cal.com* | **Not configured** |
 | Google Sheets | Lead register | **Not configured** — dev uses an in-memory store |
 | Upstash Redis (free) | Durable rate limiting and duplicate protection | **Not configured** — falls back to non-durable memory |
-| Vercel (Hobby) | Hosting previews | **Not configured** |
+| Vercel (Hobby) | Hosting | **Live** — production at https://caspian-properties-web.vercel.app, deployed from GitHub `main` |
 | Vercel Web Analytics | Cookieless page-view statistics | Off (`NEXT_PUBLIC_ENABLE_ANALYTICS=false`) |
 
 Secrets go only in `.env.local` (your computer) or Vercel → Project → Settings → Environment Variables. Never paste them into chat, email or code.
