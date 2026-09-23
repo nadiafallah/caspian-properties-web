@@ -68,7 +68,7 @@ Step-by-step instructions for Cal.com + Google Calendar, Google Sheets, Upstash 
 
 ## Deploying
 
-The code is in the private GitHub repository `nadiafallah/caspian-properties-web`, connected to the Vercel project `caspian-properties-web` (team “nadia”, Hobby plan).
+The code is in the public GitHub repository `nadiafallah/caspian-properties-web`, connected to the Vercel project `caspian-properties-web` (team “nadia”, Hobby plan). Because the repository is public, never commit secrets, the brand guide or any licence document — secrets belong in Vercel's Environment Variables, and owner-only documents in the local, git-ignored `private/` folder.
 
 - **Every push to `main` goes live on production automatically.** Push other branches to get a private preview link first.
 - Production environment variables: Vercel → Project → Settings → Environment Variables. Production uses `NEXT_PUBLIC_SITE_STAGE=launch` and `NEXT_PUBLIC_ALLOW_INDEXING=false`; Preview keeps its own values. After changing a variable, redeploy (Deployments → ⋯ → Redeploy).
