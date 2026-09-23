@@ -10,6 +10,7 @@ import { allowIndexing, brandName, siteUrl } from "@/config/site";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { AttributionCapture } from "@/components/AttributionCapture";
+import { GlassFilter } from "@/components/GlassFilter";
 import "../globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -82,6 +83,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           </main>
           <SiteFooter />
         </NextIntlClientProvider>
+        <GlassFilter />
         <AttributionCapture />
         {process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === "true" ? <Analytics /> : null}
       </body>

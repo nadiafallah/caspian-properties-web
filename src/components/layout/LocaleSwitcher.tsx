@@ -94,7 +94,7 @@ export function LocaleMenu({ label }: { label: string }) {
         aria-controls={panelId}
         aria-label={`${label}: ${localeMeta[locale].label}`}
         onClick={() => setOpen((v) => !v)}
-        className="flex min-h-11 items-center gap-2 rounded-sm px-3 font-medium text-ink hover:text-bronze-deep"
+        className="glass flex min-h-11 items-center gap-2 rounded-full px-4 font-medium text-ink hover:text-bronze-deep"
       >
         <GlobeIcon />
         <span lang={locale}>{localeMeta[locale].label}</span>

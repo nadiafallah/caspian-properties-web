@@ -42,7 +42,7 @@ export function MobileNav({ items, labels }: { items: NavItem[]; labels: MobileN
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen((v) => !v)}
-        className="flex min-h-12 min-w-12 items-center justify-center gap-2 rounded-sm px-3 font-medium text-ink"
+        className="glass flex min-h-12 min-w-12 items-center justify-center gap-2 rounded-full px-3 font-medium text-ink"
       >
         <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.6">
           {open ? <path d="M6 6l12 12M18 6 6 18" strokeLinecap="round" /> : <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />}

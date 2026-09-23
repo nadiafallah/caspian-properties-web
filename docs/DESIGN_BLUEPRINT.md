@@ -25,7 +25,7 @@ An advisory website — not a listing portal — that:
 | ORN | 557 — confirmed current by owner (22 Sep 2026). |
 | Phone / WhatsApp / email | Owner will supply new public numbers; hidden until then. |
 | Rate limiting | Upstash Redis (free plan) + honeypot + minimum fill time + Server Action origin check. Turnstile held in reserve. |
-| Analytics | Vercel Web Analytics (cookieless), off until enabled in the dashboard. Funnel conversion measured from the Google Sheet. |
+| Analytics | Vercel Web Analytics (cookieless), off until enabled in the dashboard. Funnel conversion measured from the Supabase `leads` table. |
 | Paid services | None until the owner has validated the site. Vercel Hobby for previews; the commercial-plan question is raised only at public launch. |
 
 ## 3. Information architecture
@@ -76,9 +76,11 @@ Also: **Bronze Signature on Ivory is 2.83:1** and fails even for large text, so 
 
 **Graphic devices:** Caspian Horizon (1 px bronze rule, once per composition), Nadia Frame (one cut corner, mirrored in RTL), Proof Label (Inter Medium 12 px, +0.08 em; not uppercased in RTL).
 
-**Layout:** 1200 px max width, 12/8/4 columns, 20 px mobile margin, 8-pt spacing, cards 8 px radius, buttons 4 px, 48 px targets.
+**Layout:** 1200 px max width, 12/8/4 columns, 20 px mobile margin, 8-pt spacing, cards 8 px radius, pill-shaped buttons, 48 px targets.
 
-**Motion:** none beyond colour transitions; all transitions disabled under `prefers-reduced-motion`.
+**Buttons — liquid glass** (owner request, 23 Sep 2026; after the 21st.dev LiquidButton): every `.btn`, plus the header menu and language controls (`.glass`), gets a pill shape, an inset glass rim (dark rim on light surfaces, light rim on `.surface-dark`) and a displaced-backdrop layer via the SVG filter in `src/components/GlassFilter.tsx`, rendered once per document. Primary fills stay opaque so contrast is unchanged; the distortion is visible on transparent (secondary) buttons in Chromium only — other browsers show the rim alone.
+
+**Motion:** colour transitions, plus a 1.05 hover scale on buttons; all transitions disabled under `prefers-reduced-motion`.
 
 **Never mirrored in RTL:** logo lock-up, monogram, photos, phone numbers, emails, BRN/ORN, the Cal.com widget.
 
@@ -86,7 +88,7 @@ Also: **Bronze Signature on Ivory is 2.83:1** and fails even for large text, so 
 
 1. **Step 1 — About you:** name, email, contact channel, phone (required only for phone/WhatsApp, must start with `+country`), location (optional), consultation language.
 2. **Step 2 — Goals:** interest, purpose, budget (AED purchase bands, or annual-rent bands for leasing, plus “discuss in consultation”), timeline, decision-makers (optional), notes ≤ 1,000 (optional, warns against sensitive data), referral (optional), consent (links to privacy notice).
-3. **Server Action** → `submitLead()`: honeypot, ≥ 3 s fill time, Zod validation, rate limit (5 / 10 min per hashed IP), idempotency by submission UUID, Google Sheets append. Errors are never reported as success.
+3. **Server Action** → `submitLead()`: honeypot, ≥ 3 s fill time, Zod validation, rate limit (5 / 10 min per hashed IP), idempotency by submission UUID, Supabase insert (Sheets adapter kept as an alternative). Errors are never reported as success.
 4. **Step 3 — Cal.com inline embed** (lazy-loaded) with name/email prefill and `metadata[leadId]`. On `bookingSuccessfulV2` → `/consultation/thank-you`. If the embed fails (event or 10 s timeout), a direct booking link and direct-contact options are shown.
 5. **Webhook** `/api/webhooks/calcom` (HMAC-verified, idempotent) writes booking status, uid and times back to the lead row. Bookings without a lead id are recorded as `unqualified_booking`.
 
@@ -94,12 +96,12 @@ The form is JavaScript-first (a `<noscript>` message points to direct contact); 
 
 ## 6. Architecture
 
-Next.js 16.3 (App Router, Turbopack) · React 19.2 · TypeScript 5 strict · Tailwind CSS 4 · next-intl 4.14 (`localePrefix: "as-needed"`, `localeDetection: false`, no locale cookie) · Zod 4 · `@calcom/embed-react` 1.5 · `google-auth-library` + Sheets REST v4 · `@upstash/ratelimit` · Vitest · Playwright + axe.
+Next.js 16.3 (App Router, Turbopack) · React 19.2 · TypeScript 5 strict · Tailwind CSS 4 · next-intl 4.14 (`localePrefix: "as-needed"`, `localeDetection: false`, no locale cookie) · Zod 4 · `@calcom/embed-react` 1.5 · Supabase PostgREST via `fetch` (no SDK) · `google-auth-library` + Sheets REST v4 (alternative) · `@upstash/ratelimit` · Vitest · Playwright + axe.
 
 - Server Components by default; client components: navigation, language switcher, consultation form, Cal.com embed, card preview.
 - Content pages are statically generated for all three locales.
 - Company/compliance facts: `src/config/company.ts` (each field verified or pending, with source). Unverified fields never render in the launch stage.
-- Integrations sit behind adapters: `LeadStore` (Sheets / memory), `Guard` (Upstash / memory).
+- Integrations sit behind adapters: `LeadStore` (Supabase / Sheets / memory), `Guard` (Upstash / memory).
 - Security headers and CSP in `next.config.ts`. The CSP allows `'unsafe-inline'` scripts because pages are static (nonces would force dynamic rendering); everything else is locked to self + Cal.com.
 
 ## 7. Performance budget and measurements

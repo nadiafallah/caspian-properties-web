@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GlassFilter } from "@/components/GlassFilter";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function GlobalNotFound() {
             </Link>
           </p>
         </main>
+        <GlassFilter />
       </body>
     </html>
   );

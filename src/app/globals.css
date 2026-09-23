@@ -209,6 +209,60 @@
     background: var(--color-bronze-light);
   }
 
+  /* ── Liquid glass (21st.dev LiquidButton): an inset rim plus a displaced backdrop.
+     The SVG filter is rendered once by <GlassFilter />. Fills stay opaque on
+     primary buttons so text contrast never depends on what sits behind. ── */
+  .glass,
+  .btn {
+    position: relative;
+    isolation: isolate;
+    transition:
+      background-color 160ms var(--ease-calm),
+      color 160ms var(--ease-calm),
+      border-color 160ms var(--ease-calm),
+      scale 300ms var(--ease-calm);
+  }
+  :is(.glass, .btn)::before,
+  :is(.glass, .btn)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  :is(.glass, .btn)::before {
+    box-shadow:
+      0 0 6px rgb(0 0 0 / 0.03),
+      0 2px 6px rgb(0 0 0 / 0.08),
+      inset 3px 3px 0.5px -3px rgb(0 0 0 / 0.9),
+      inset -3px -3px 0.5px -3px rgb(0 0 0 / 0.85),
+      inset 1px 1px 1px -0.5px rgb(0 0 0 / 0.6),
+      inset -1px -1px 1px -0.5px rgb(0 0 0 / 0.6),
+      inset 0 0 6px 6px rgb(0 0 0 / 0.12),
+      inset 0 0 2px 2px rgb(0 0 0 / 0.06),
+      0 0 12px rgb(255 255 255 / 0.15);
+  }
+  :is(.glass, .btn)::after {
+    z-index: -1;
+    overflow: hidden;
+    backdrop-filter: url("#container-glass");
+  }
+  .surface-dark :is(.glass, .btn)::before {
+    box-shadow:
+      0 0 8px rgb(0 0 0 / 0.03),
+      0 2px 6px rgb(0 0 0 / 0.08),
+      inset 3px 3px 0.5px -3.5px rgb(255 255 255 / 0.09),
+      inset -3px -3px 0.5px -3.5px rgb(255 255 255 / 0.85),
+      inset 1px 1px 1px -0.5px rgb(255 255 255 / 0.6),
+      inset -1px -1px 1px -0.5px rgb(255 255 255 / 0.6),
+      inset 0 0 6px 6px rgb(255 255 255 / 0.12),
+      inset 0 0 2px 2px rgb(255 255 255 / 0.06),
+      0 0 12px rgb(0 0 0 / 0.15);
+  }
+  :is(.glass, .btn):hover:not(:disabled, [aria-disabled="true"]) {
+    scale: 1.05;
+  }
+
   /* ── Buttons: sentence case, 48 px targets, colour pairs from §2.5 ── */
   .btn {
     display: inline-flex;
@@ -216,16 +270,12 @@
     justify-content: center;
     gap: 0.5rem;
     min-height: 3rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-sm);
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
     font-weight: 600;
     font-size: 1rem;
     line-height: 1.25;
     text-decoration: none;
-    transition:
-      background-color 160ms var(--ease-calm),
-      color 160ms var(--ease-calm),
-      border-color 160ms var(--ease-calm);
     cursor: pointer;
   }
   .btn[aria-disabled="true"],

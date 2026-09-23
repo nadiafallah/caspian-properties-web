@@ -1,6 +1,7 @@
 "use client";
 
 import "./globals.css";
+import { GlassFilter } from "@/components/GlassFilter";
 
 // Last-resort boundary when the root layout itself fails. Kept dependency-free.
 export default function GlobalError({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
@@ -18,6 +19,7 @@ export default function GlobalError({ reset }: { error: Error & { digest?: strin
             </button>
           </p>
         </main>
+        <GlassFilter />
       </body>
     </html>
   );

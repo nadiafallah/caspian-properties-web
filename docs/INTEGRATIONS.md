@@ -6,7 +6,8 @@ Every service uses a free plan. None of them is live until you complete the step
 |---|---|---|
 | Cal.com (free) | Availability, booking, invitations, reschedule/cancel | **Not configured** — needs your event link |
 | Google Calendar | Nadia’s real availability, connected *inside Cal.com* | **Not configured** |
-| Google Sheets | Lead register | **Not configured** — dev uses an in-memory store |
+| Supabase (free) | Lead register (`leads` table) | **Table created**; needs `SUPABASE_URL` + `SUPABASE_SECRET_KEY` on Vercel — dev uses an in-memory store |
+| Google Sheets | Alternative lead register (`LEAD_STORE=sheets`) | Not used |
 | Upstash Redis (free) | Durable rate limiting and duplicate protection | **Not configured** — falls back to non-durable memory |
 | Vercel (Hobby) | Hosting | **Live** — production at https://caspian-properties-web.vercel.app, deployed from GitHub `main` |
 | Vercel Web Analytics | Cookieless page-view statistics | Off (`NEXT_PUBLIC_ENABLE_ANALYTICS=false`) |
@@ -54,7 +55,29 @@ The website never touches Google Calendar directly. Cal.com owns availability, t
 - **The booking link is public**, so someone could book without filling in the form. Keeping the event hidden reduces this, and such bookings are logged as `unqualified_booking` so Nadia can see them.
 - **Language and RTL:** the Cal.com widget is Cal.com’s own UI. It may appear in English on the Persian and Arabic pages, and it is not mirrored. The site says so beside the calendar.
 
-## 2. Google Sheets lead register
+## 2. Supabase lead register
+
+Project `nadiafallah's Project` (ref `mdblpfwjzliilkrqtkwc`, region ap-south-1). The table is created by [`supabase/migrations/20260923000000_create_leads.sql`](../supabase/migrations/20260923000000_create_leads.sql); its columns match the Sheets header below.
+
+1. Supabase Dashboard → **Project Settings → API Keys** → copy the **secret** key (`sb_secret_…`). Never paste it into chat or code.
+2. Set the environment variables (Vercel: mark `SUPABASE_SECRET_KEY` as Sensitive):
+   - `SUPABASE_URL=https://mdblpfwjzliilkrqtkwc.supabase.co`
+   - `SUPABASE_SECRET_KEY` — the secret key.
+   - `LEAD_STORE=supabase`
+3. Redeploy.
+
+**Security:** row level security is on with **no policies**, and `anon`/`authenticated` have no grants, so the public key can neither read nor write leads. Only the server, with the secret key, can. View leads in Dashboard → Table Editor → `leads`.
+
+**Behaviour:** a retried submission with the same `lead_id` is ignored (no duplicates). Error logs contain only the Postgres code and message, never row data. If Supabase is not configured or unreachable, the visitor sees “We couldn’t save your details” — never false success.
+
+**Free-plan note:** free projects pause after about a week without activity. A paused project makes the form fail; restore it from the dashboard.
+
+**Verify:** submit the form on a preview, and a row appears in `leads` with `booking_status = submitted`.
+
+## 2b. Google Sheets lead register (alternative)
+
+Only if you set `LEAD_STORE=sheets` instead of Supabase.
+
 
 1. Create a Google Sheet named e.g. “CPN Leads”. Rename the first tab to `Leads`.
 2. Paste this exact header row into row 1 (one value per column, A → AD):
@@ -101,7 +124,7 @@ The website never touches Google Calendar directly. Cal.com owns availability, t
 1. Vercel → Project → Analytics → Enable Web Analytics (Hobby includes a limited free quota; check current limits in the dashboard).
 2. Set `NEXT_PUBLIC_ENABLE_ANALYTICS=true` and redeploy.
 
-It is cookieless and already described in the privacy notice. Funnel conversion (form → booking) comes from the Sheet’s `booking_status` column.
+It is cookieless and already described in the privacy notice. Funnel conversion (form → booking) comes from the `booking_status` column in Supabase.
 
 ## 5. Environment variables
 
@@ -115,9 +138,11 @@ See [`.env.example`](../.env.example) for every name with an explanation. Summar
 | `NEXT_PUBLIC_ENABLE_ANALYTICS` | no | analytics |
 | `NEXT_PUBLIC_CALCOM_LINK`, `_NAMESPACE`, `_ORIGIN` | no | scheduling |
 | `CALCOM_WEBHOOK_SECRET` | **yes** | booking sync |
-| `LEAD_STORE` | no | `sheets` in production |
-| `GOOGLE_SHEETS_SPREADSHEET_ID`, `GOOGLE_SHEETS_SHEET_NAME` | no* | lead register |
-| `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` | **yes** | lead register |
+| `LEAD_STORE` | no | `supabase` in production |
+| `SUPABASE_URL` | no | lead register |
+| `SUPABASE_SECRET_KEY` | **yes** | lead register |
+| `GOOGLE_SHEETS_SPREADSHEET_ID`, `GOOGLE_SHEETS_SHEET_NAME` | no* | lead register (Sheets alternative) |
+| `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` | **yes** | lead register (Sheets alternative) |
 | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` | **yes** | rate limiting |
 
 \*Not secret, but keep them private.

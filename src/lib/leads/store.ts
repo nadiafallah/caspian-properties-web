@@ -2,6 +2,7 @@ import "server-only";
 import type { BookingUpdate, LeadRecord } from "./record";
 import { MemoryLeadStore } from "./memory-store";
 import { SheetsLeadStore } from "./sheets-store";
+import { SupabaseLeadStore } from "./supabase-store";
 
 /** Storage adapter. Replace the implementation without touching the form or webhook. */
 export interface LeadStore {
@@ -18,7 +19,7 @@ let memoryStore: MemoryLeadStore | undefined;
  * Callers must then report failure — never a silent success.
  */
 export function getLeadStore(): LeadStore | null {
-  const mode = process.env.LEAD_STORE ?? (process.env.NODE_ENV === "production" ? "sheets" : "memory");
+  const mode = process.env.LEAD_STORE ?? (process.env.NODE_ENV === "production" ? "supabase" : "memory");
 
   if (mode === "memory") {
     if (process.env.NODE_ENV === "production" && process.env.ALLOW_MEMORY_STORE !== "true") {
@@ -27,6 +28,16 @@ export function getLeadStore(): LeadStore | null {
     }
     memoryStore ??= new MemoryLeadStore();
     return memoryStore;
+  }
+
+  if (mode === "supabase") {
+    const url = process.env.SUPABASE_URL;
+    const secretKey = process.env.SUPABASE_SECRET_KEY;
+    if (!url || !secretKey) {
+      console.error("[leads] Supabase is not configured (see docs/INTEGRATIONS.md)");
+      return null;
+    }
+    return new SupabaseLeadStore({ url, secretKey });
   }
 
   const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;

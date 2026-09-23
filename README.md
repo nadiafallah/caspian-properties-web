@@ -2,14 +2,14 @@
 
 The advisory website for **caspian-properties.com**, in English (the entry language), فارسی and العربية.
 
-It introduces Nadia and Caspian Properties (since 2007), explains how Nadia advises, and turns suitable visitors into private consultations. Visitors fill in a short two-step form, the details go to a Google Sheet, and then they choose a time in Nadia’s Cal.com calendar, which is connected to Google Calendar.
+It introduces Nadia and Caspian Properties (since 2007), explains how Nadia advises, and turns suitable visitors into private consultations. Visitors fill in a short two-step form, the details are saved in a private Supabase database, and then they choose a time in Nadia’s Cal.com calendar, which is connected to Google Calendar.
 
-> **Current state:** live at **https://caspian-properties-web.vercel.app** (Vercel production, launch stage, hidden from search engines). It still needs real photos, the biography, public contact details and the service connections (Cal.com, Google Sheets, Upstash). Until Google Sheets is connected, the form honestly reports that it could not save. See [docs/CONTENT_INVENTORY.md](docs/CONTENT_INVENTORY.md) and [docs/LAUNCH_CHECKLIST.md](docs/LAUNCH_CHECKLIST.md). The `caspian-properties.com` domain is not connected yet.
+> **Current state:** live at **https://caspian-properties-web.vercel.app** (Vercel production, launch stage, hidden from search engines). It still needs real photos, the biography, public contact details and the service connections (Cal.com, Supabase, Upstash). Until Supabase is connected, the form honestly reports that it could not save. See [docs/CONTENT_INVENTORY.md](docs/CONTENT_INVENTORY.md) and [docs/LAUNCH_CHECKLIST.md](docs/LAUNCH_CHECKLIST.md). The `caspian-properties.com` domain is not connected yet.
 
 ## What you need
 
 - A Mac or PC with **Node.js 24** (or newer) — download from nodejs.org.
-- Free accounts, when you are ready to connect them: Cal.com, Google Cloud (for Sheets), Vercel, Upstash.
+- Free accounts, when you are ready to connect them: Cal.com, Supabase, Vercel, Upstash.
 
 ## See the site on your computer
 
@@ -64,7 +64,7 @@ The browser tests use a fake Cal.com and a temporary store. They never create re
 
 ## Connecting the services
 
-Step-by-step instructions for Cal.com + Google Calendar, Google Sheets, Upstash and analytics are in [docs/INTEGRATIONS.md](docs/INTEGRATIONS.md). Never paste passwords, keys or secrets into chat or code; put them in `.env.local` or in Vercel’s Environment Variables.
+Step-by-step instructions for Cal.com + Google Calendar, Supabase, Upstash and analytics are in [docs/INTEGRATIONS.md](docs/INTEGRATIONS.md). Never paste passwords, keys or secrets into chat or code; put them in `.env.local` or in Vercel’s Environment Variables.
 
 ## Deploying
 
@@ -87,7 +87,7 @@ The code is in the public GitHub repository `nadiafallah/caspian-properties-web`
 
 - Photos, biography, logo files and public contact details are awaiting Nadia (placeholders are labelled in preview).
 - The Cal.com booking widget may appear in English on Persian/Arabic pages and is not mirrored. That is Cal.com’s own interface.
-- The Cal.com link is public, so someone could book without the form. Such bookings are flagged as `unqualified_booking` in the Sheet.
+- The Cal.com link is public, so someone could book without the form. Such bookings are flagged as `unqualified_booking` in the lead register.
 - The broker-card preview can’t be protected from screenshots (no website can do that); it is reduced in size and watermarked instead.
 - Persian/Arabic pages load their font slightly later than English pages (see the performance notes in [docs/DESIGN_BLUEPRINT.md](docs/DESIGN_BLUEPRINT.md#7-performance-budget-and-measurements)).
 - Privacy notice and terms describe the real setup but still need legal review.
