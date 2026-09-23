@@ -6,7 +6,7 @@ Every service uses a free plan. None of them is live until you complete the step
 |---|---|---|
 | Cal.com (free) | Availability, booking, invitations, reschedule/cancel | **Not configured** — needs your event link |
 | Google Calendar | Nadia’s real availability, connected *inside Cal.com* | **Not configured** |
-| Supabase (free) | Lead register (`leads` table) | **Table created**; needs `SUPABASE_URL` + `SUPABASE_SECRET_KEY` on Vercel — dev uses an in-memory store |
+| Supabase (free) | Lead register (`leads` table) | **Live** — `leads` table, keys set on Vercel |
 | Google Sheets | Alternative lead register (`LEAD_STORE=sheets`) | Not used |
 | Upstash Redis (free) | Durable rate limiting and duplicate protection | **Not configured** — falls back to non-durable memory |
 | Vercel (Hobby) | Hosting | **Live** — production at https://caspian-properties-web.vercel.app, deployed from GitHub `main` |
@@ -57,11 +57,11 @@ The website never touches Google Calendar directly. Cal.com owns availability, t
 
 ## 2. Supabase lead register
 
-Project `nadiafallah's Project` (ref `mdblpfwjzliilkrqtkwc`, region ap-south-1). The table is created by [`supabase/migrations/20260923000000_create_leads.sql`](../supabase/migrations/20260923000000_create_leads.sql); its columns match the Sheets header below.
+Project `nadiafallah web` (ref `snmfwcjpeketdrahrkib`, region ap-southeast-1). The table is created by [`supabase/migrations/20260923000000_create_leads.sql`](../supabase/migrations/20260923000000_create_leads.sql); its columns match the Sheets header below.
 
 1. Supabase Dashboard → **Project Settings → API Keys** → copy the **secret** key (`sb_secret_…`). Never paste it into chat or code.
 2. Set the environment variables (Vercel: mark `SUPABASE_SECRET_KEY` as Sensitive):
-   - `SUPABASE_URL=https://mdblpfwjzliilkrqtkwc.supabase.co`
+   - `SUPABASE_URL=https://snmfwcjpeketdrahrkib.supabase.co`
    - `SUPABASE_SECRET_KEY` — the secret key.
    - `LEAD_STORE=supabase`
 3. Redeploy.
