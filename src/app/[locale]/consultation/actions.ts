@@ -1,6 +1,8 @@
 "use server";
 
 import { headers } from "next/headers";
+import { after } from "next/server";
+import { notifyNewLead } from "@/lib/leads/notify";
 import { getLeadStore } from "@/lib/leads/store";
 import { submitLead, type SubmitResult } from "@/lib/leads/submit";
 import { getGuard, hashIdentifier } from "@/lib/security/guard";
@@ -24,5 +26,7 @@ export async function submitConsultation(formData: FormData): Promise<SubmitResu
     now: () => new Date(),
     clientKey: hashIdentifier(ip),
     log: (message) => console.info(message),
+    // Runs after the response is sent, so notifications never delay or fail the form.
+    onStored: (record) => after(() => notifyNewLead(record)),
   });
 }

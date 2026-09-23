@@ -6,7 +6,7 @@ import { formatDate } from "@/lib/format";
 import { pageMetadata } from "@/lib/seo";
 import { LegalDocument } from "@/components/LegalDocument";
 
-const services = ["supabase", "google", "cal", "vercel", "upstash"] as const;
+const services = ["supabase", "google", "notifications", "cal", "vercel", "upstash"] as const;
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/privacy">) {
   const locale = await resolveLocale(params);

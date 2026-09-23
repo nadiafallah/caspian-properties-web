@@ -19,6 +19,8 @@ export type SubmitDeps = {
   /** Hashed client identifier for rate limiting (never the raw IP). */
   clientKey: string;
   log?: (message: string) => void;
+  /** Called once a new lead is stored (e.g. to notify Nadia). Must not throw. */
+  onStored?: (record: LeadRecord) => void;
 };
 
 /** Humans can't complete both steps this fast; bots usually can. */
@@ -84,8 +86,9 @@ export async function submitLead(raw: Record<string, unknown>, deps: SubmitDeps)
     return success;
   }
 
+  const record = buildLeadRecord(input, now.toISOString());
   try {
-    await deps.store.append(buildLeadRecord(input, now.toISOString()));
+    await deps.store.append(record);
   } catch {
     log(`[leads] storage failed for ${input.submissionId}`);
     // Let the visitor retry with the same id instead of it being treated as a duplicate.
@@ -94,5 +97,6 @@ export async function submitLead(raw: Record<string, unknown>, deps: SubmitDeps)
   }
 
   log(`[leads] stored ${input.submissionId}`);
+  deps.onStored?.(record);
   return success;
 }

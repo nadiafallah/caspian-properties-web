@@ -563,6 +563,7 @@
     "services": {
       "supabase": "Supabase stores your consultation request in a private database.",
       "google": "Google Calendar stores appointment details.",
+      "notifications": "Telegram, WhatsApp (via the CallMeBot service) and Resend (email) are used to send Nadia a private notification with the details of each new consultation request.",
       "cal": "Cal.com shows available times and manages your booking, confirmation, rescheduling and cancellation. When you book, Cal.com receives the details you enter in its booking form.",
       "vercel": "Vercel hosts this website and provides visitor statistics that do not use cookies.",
       "upstash": "Upstash briefly stores a one-way (hashed) form of your IP address to limit repeated submissions and prevent spam. These records expire automatically."

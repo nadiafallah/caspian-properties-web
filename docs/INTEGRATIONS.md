@@ -8,6 +8,7 @@ Every service uses a free plan. None of them is live until you complete the step
 | Google Calendar | Nadia’s real availability, connected *inside Cal.com* | **Not configured** |
 | Supabase (free) | Lead register (`leads` table) | **Live** — `leads` table, keys set on Vercel |
 | Google Sheets | Alternative lead register (`LEAD_STORE=sheets`) | Not used |
+| Telegram / Resend / CallMeBot (free) | New-lead notifications to Nadia | **Not configured** — keys needed |
 | Upstash Redis (free) | Durable rate limiting and duplicate protection | **Not configured** — falls back to non-durable memory |
 | Vercel (Hobby) | Hosting | **Live** — production at https://caspian-properties-web.vercel.app, deployed from GitHub `main` |
 | Vercel Web Analytics | Cookieless page-view statistics | Off (`NEXT_PUBLIC_ENABLE_ANALYTICS=false`) |
@@ -105,6 +106,25 @@ Only if you set `LEAD_STORE=sheets` instead of Supabase.
 - If Sheets is not configured or unreachable, the visitor sees “We couldn’t save your details”, with retry and direct-contact options. The form never reports false success. The in-memory store is refused in production.
 
 **Verify:** submit the form on a preview, and a row appears within seconds with `booking_status = submitted`.
+
+## 2c. New-lead notifications (Telegram, email, WhatsApp)
+
+After a lead is saved, `src/lib/leads/notify.ts` sends Nadia a plain-text summary (name, phone, email, interest, budget, timeline, notes, lead id). It runs with Next.js `after()`, so it never delays or fails the form. Each channel turns on only when all of its variables are set; failures are logged with the channel and lead id only.
+
+**Telegram (free)**
+1. In Telegram, open **@BotFather** → `/newbot` → copy the token → `TELEGRAM_BOT_TOKEN`.
+2. Send any message to your new bot, then open `https://api.telegram.org/bot<TOKEN>/getUpdates` and copy `message.chat.id` → `TELEGRAM_CHAT_ID`.
+
+**Email via Resend (free plan)**
+1. Sign up at resend.com with the address that should receive the emails → API Keys → create → `RESEND_API_KEY`.
+2. `LEAD_NOTIFY_EMAIL_TO` = that address. Without a verified domain, Resend only delivers to the account's own address and sends from `onboarding@resend.dev`. After connecting `caspian-properties.com`, verify it in Resend and set `LEAD_NOTIFY_EMAIL_FROM`, e.g. `Caspian website <leads@caspian-properties.com>`.
+
+**WhatsApp via CallMeBot (free, personal use)**
+1. Open https://www.callmebot.com/blog/free-api-whatsapp-messages/ , save the phone number shown there in your contacts, and send it the WhatsApp activation message given on that page.
+2. It replies with an API key → `CALLMEBOT_APIKEY`; `CALLMEBOT_PHONE` = your number in international format, e.g. `+971…`.
+3. CallMeBot is an unofficial third-party service: messages (including lead details) pass through it. The official WhatsApp Business API charges per message, so it is not used while the site stays on free plans.
+
+**Verify:** submit the form on a preview; each configured channel receives the message within seconds.
 
 ## 3. Upstash Redis (rate limiting and duplicate protection)
 

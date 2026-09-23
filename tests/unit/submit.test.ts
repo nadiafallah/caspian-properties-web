@@ -27,6 +27,20 @@ describe("submitLead", () => {
     expect(store.records).toHaveLength(1);
   });
 
+  it("notifies once for a new lead, never for duplicates or failures", async () => {
+    const onStored = vi.fn();
+    const { deps: d } = deps({ onStored });
+    await submitLead({ ...validInput }, d);
+    await submitLead({ ...validInput }, d);
+    expect(onStored).toHaveBeenCalledTimes(1);
+    expect(onStored.mock.calls[0]?.[0]).toMatchObject({ lead_id: validInput.submissionId, full_name: "Sara Ahmadi" });
+
+    const failing = { append: vi.fn().mockRejectedValue(new Error("down")) };
+    const notFailing = vi.fn();
+    await submitLead({ ...validInput, submissionId: crypto.randomUUID() }, { ...d, store: failing, onStored: notFailing });
+    expect(notFailing).not.toHaveBeenCalled();
+  });
+
   it("rejects the honeypot and suspiciously fast submissions without storing", async () => {
     const { store, deps: d } = deps();
     expect((await submitLead({ ...validInput, website: "http://spam" }, d)).status).toBe("rejected");
