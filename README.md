@@ -36,7 +36,7 @@ src/content/                             ← curated opportunities and market in
 src/app/[locale]/…                       ← the pages
 src/components/                          ← building blocks (header, footer, sections, form)
 public/brand, public/credentials         ← logo (temporary) and watermarked broker-card preview
-docs/                                    ← blueprint, content inventory, integrations, launch checklist, brand guide
+docs/                                    ← blueprint, content inventory, integrations, launch checklist
 tests/                                   ← automated checks
 ```
 
@@ -98,4 +98,4 @@ The code is in the private GitHub repository `nadiafallah/caspian-properties-web
 - [Content inventory](docs/CONTENT_INVENTORY.md) — verified facts, what’s missing, assets, translation review
 - [Integrations](docs/INTEGRATIONS.md) — service setup and verification
 - [Launch checklist](docs/LAUNCH_CHECKLIST.md) — pre-launch, domain, rollback
-- [Brand guide v2](docs/brand/Caspian_Properties_by_Nadia_Brand_Guide_v2.pdf)
+- Brand guide v2 (PDF) — kept on Nadia's computer in `private/brand/`; it is not committed, because this repository is public.

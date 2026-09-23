@@ -10,7 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # Project notes
 
-- Brand rules: `docs/brand/Caspian_Properties_by_Nadia_Brand_Guide_v2.pdf`; decisions: `docs/DESIGN_BLUEPRINT.md`.
+- Brand rules: `private/brand/Caspian_Properties_by_Nadia_Brand_Guide_v2.pdf` (local only — the repository is public, so the guide is not committed); decisions: `docs/DESIGN_BLUEPRINT.md`.
 - Never invent facts. Company/licence/contact data lives in `src/config/company.ts` with `verified`/`pending` + source.
 - All UI text is in `src/messages/{en,fa,ar}.json` — keys must match (`npm run check:i18n`); keys must not contain dots.
 - English is the entry language (`localeDetection: false`); fa/ar are RTL — use logical CSS properties.

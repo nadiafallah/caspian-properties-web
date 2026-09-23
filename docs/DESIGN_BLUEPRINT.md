@@ -1,6 +1,6 @@
 # Design blueprint — Caspian Properties by Nadia
 
-Approved 22 Sep 2026. Source of truth for brand rules: [`docs/brand/Caspian_Properties_by_Nadia_Brand_Guide_v2.pdf`](brand/Caspian_Properties_by_Nadia_Brand_Guide_v2.pdf) (v2.0, Sep 2026).
+Approved 22 Sep 2026. Source of truth for brand rules: `Caspian_Properties_by_Nadia_Brand_Guide_v2.pdf` (v2.0, Sep 2026), kept in the owner's local `private/brand/` folder and deliberately not committed, because this repository is public.
 This document records how the website applies the guide and every decision taken with the owner.
 
 ## 1. Purpose

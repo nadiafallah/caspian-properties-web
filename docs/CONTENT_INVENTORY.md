@@ -54,7 +54,7 @@ Update the matching field to `verified("…", "source")` in `src/config/company.
 | Social share image (`src/app/[locale]/opengraph-image.png`) | **Temporary** | Charcoal card with monogram and tagline. Replace with a designed 1200×630 image. |
 | Broker card preview (`public/credentials/rera-card-preview.webp`) | Approved use | 720 px, watermark baked in, `noindex`. Regenerate when the card is renewed (`scripts/make-credential-preview.mjs`). Original PDF is never committed. |
 | Photography | **Missing** | Tonal placeholders only (labelled in preview). |
-| Brand guide PDF | Reference | `docs/brand/` |
+| Brand guide PDF | Reference | owner's local `private/brand/` (not in the public repository) |
 
 **Photography brief** (guide §2.10):
 
