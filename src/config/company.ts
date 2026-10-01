@@ -27,8 +27,8 @@ export const company = {
     "Office 1107, Business Bay, Dubai, UAE",
     "Listed on the DET licence; building name and public display to be confirmed by owner",
   ),
-  phone: pending<string>(null, "Owner will provide the public phone number"),
-  whatsapp: pending<string>(null, "Owner will provide the public WhatsApp number (E.164, e.g. +9715XXXXXXXX)"),
+  phone: verified("+971 52 887 7200", "Owner instruction for the website assistant, 2 Oct 2026"),
+  whatsapp: verified("+971 52 887 7200", "Owner instruction for the website assistant, 2 Oct 2026"),
   email: pending<string>(null, "Owner will provide the public enquiry email"),
   privacyEmail: pending<string>(null, "Owner to confirm the address for privacy requests"),
   instagram: verified(

@@ -6,7 +6,7 @@ import { formatDate } from "@/lib/format";
 import { pageMetadata } from "@/lib/seo";
 import { LegalDocument } from "@/components/LegalDocument";
 
-const services = ["supabase", "google", "notifications", "cal", "vercel", "upstash"] as const;
+const services = ["supabase", "google", "notifications", "openai", "cal", "vercel", "upstash"] as const;
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/privacy">) {
   const locale = await resolveLocale(params);
@@ -46,6 +46,7 @@ export default async function PrivacyPage({ params }: PageProps<"/[locale]/priva
           body: (
             <>
               <p>{t("collectBody")}</p>
+              <p>{t("assistantBody")}</p>
               <p className="font-medium text-ink">{t("notCollected")}</p>
             </>
           ),
@@ -65,7 +66,16 @@ export default async function PrivacyPage({ params }: PageProps<"/[locale]/priva
             </>
           ),
         },
-        { id: "cookies", title: t("cookiesTitle"), body: <p>{t("cookiesBody")}</p> },
+        {
+          id: "cookies",
+          title: t("cookiesTitle"),
+          body: (
+            <>
+              <p>{t("cookiesBody")}</p>
+              <p>{t("panelCookies")}</p>
+            </>
+          ),
+        },
         { id: "retention", title: t("retentionTitle"), body: <p>{t("retentionBody")}</p> },
         { id: "rights", title: t("rightsTitle"), body: <p>{t("rightsBody")}</p> },
         { id: "security", title: t("securityTitle"), body: <p>{t("securityBody")}</p> },

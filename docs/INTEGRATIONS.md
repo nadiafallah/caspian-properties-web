@@ -107,9 +107,9 @@ Only if you set `LEAD_STORE=sheets` instead of Supabase.
 
 **Verify:** submit the form on a preview, and a row appears within seconds with `booking_status = submitted`.
 
-## 2c. New-lead notifications (Telegram, email, WhatsApp)
+## 2c. New-request notifications and reminders (Telegram, email, WhatsApp)
 
-After a lead is saved, `src/lib/leads/notify.ts` sends Nadia a plain-text summary (name, phone, email, interest, budget, timeline, notes, lead id). It runs with Next.js `after()`, so it never delays or fails the form. Each channel turns on only when all of its variables are set; failures are logged with the channel and lead id only.
+New requests (assistant and consultation form) and due follow-ups are queued in the `crm_outbox` table and sent by the worker described in [CLIENT_PANEL.md](CLIENT_PANEL.md), with retries and per-job status in the panel. Email and Telegram are the outbox channels; each turns on only when all of its variables are set, and queued jobs wait until it is. Messages are written in `ADMIN_LOCALE` (default `fa`) and contain the name, number, request, Dubai time and a sign-in-protected case link. If the CRM itself is unreachable when a consultation form arrives, `src/lib/leads/notify.ts` notifies directly instead (including WhatsApp via CallMeBot when configured).
 
 **Telegram (free)**
 1. In Telegram, open **@BotFather** → `/newbot` → copy the token → `TELEGRAM_BOT_TOKEN`.
@@ -124,7 +124,7 @@ After a lead is saved, `src/lib/leads/notify.ts` sends Nadia a plain-text summar
 2. It replies with an API key → `CALLMEBOT_APIKEY`; `CALLMEBOT_PHONE` = your number in international format, e.g. `+971…`.
 3. CallMeBot is an unofficial third-party service: messages (including lead details) pass through it. The official WhatsApp Business API charges per message, so it is not used while the site stays on free plans.
 
-**Verify:** submit the form on a preview; each configured channel receives the message within seconds.
+**Verify:** submit a test request; within about a minute each configured channel receives it, and the request's notification line in the panel says “accepted by the service”.
 
 ## 3. Upstash Redis (rate limiting and duplicate protection)
 
@@ -160,7 +160,15 @@ See [`.env.example`](../.env.example) for every name with an explanation. Summar
 | `CALCOM_WEBHOOK_SECRET` | **yes** | booking sync |
 | `LEAD_STORE` | no | `supabase` in production |
 | `SUPABASE_URL` | no | lead register |
-| `SUPABASE_SECRET_KEY` | **yes** | lead register |
+| `SUPABASE_SECRET_KEY` | **yes** | lead register, CRM, notification worker |
+| `SUPABASE_PUBLISHABLE_KEY` | no | client panel sign-in (server-side only) |
+| `ADMIN_LOCALE` | no | language of notifications (`fa`) |
+| `OPENAI_API_KEY` | **yes** | assistant answers (optional, paid) |
+| `OPENAI_MODEL` | no | assistant model (default `gpt-5-mini`) |
+| `TELEGRAM_BOT_TOKEN` | **yes** | notifications |
+| `TELEGRAM_CHAT_ID` | no | notifications |
+| `RESEND_API_KEY` | **yes** | email notifications |
+| `LEAD_NOTIFY_EMAIL_TO`, `LEAD_NOTIFY_EMAIL_FROM` | no | email notifications |
 | `GOOGLE_SHEETS_SPREADSHEET_ID`, `GOOGLE_SHEETS_SHEET_NAME` | no* | lead register (Sheets alternative) |
 | `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` | **yes** | lead register (Sheets alternative) |
 | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` | **yes** | rate limiting |

@@ -563,10 +563,11 @@
     "services": {
       "supabase": "Supabase stores your consultation request in a private database.",
       "google": "Google Calendar stores appointment details.",
-      "notifications": "Telegram, WhatsApp (via the CallMeBot service) and Resend (email) are used to send Nadia a private notification with the details of each new consultation request.",
+      "notifications": "Telegram, Resend (email) and, if enabled, WhatsApp via the CallMeBot service are used to send Nadia a private notification of each new request and her follow-up reminders.",
       "cal": "Cal.com shows available times and manages your booking, confirmation, rescheduling and cancellation. When you book, Cal.com receives the details you enter in its booking form.",
       "vercel": "Vercel hosts this website and provides visitor statistics that do not use cookies.",
-      "upstash": "Upstash briefly stores a one-way (hashed) form of your IP address to limit repeated submissions and prevent spam. These records expire automatically."
+      "upstash": "Upstash briefly stores a one-way (hashed) form of your IP address to limit repeated submissions and prevent spam. These records expire automatically.",
+      "openai": "OpenAI answers the general questions you type to the website assistant. Phone numbers are removed before a question is sent, your name and number are never sent to it, and the assistant cannot see any records."
     },
     "servicesNote": "These providers may process information outside the UAE.",
     "cookiesTitle": "Cookies and browser storage",
@@ -578,7 +579,9 @@
     "securityTitle": "Security",
     "securityBody": "Consultation records are kept in access-controlled systems and are available only to Nadia and authorised Caspian Properties staff who need them.",
     "changesTitle": "Changes to this notice",
-    "changesBody": "If the way we handle information changes, we will update this notice and the date shown above."
+    "changesBody": "If the way we handle information changes, we will update this notice and the date shown above.",
+    "assistantBody": "When you leave a request through the website assistant, we record only your name, one phone or WhatsApp number, the purpose of your enquiry in your own words (if you give it), the language you used, and the date and time you agreed to it being stored. The conversation itself is not saved: it stays in your browser for the current session only.",
+    "panelCookies": "Nadia’s private client panel uses essential sign-in cookies for her account only; visitors are never given these cookies. The assistant conversation is kept in your browser for the current session only."
   },
   "Terms": {
     "eyebrow": "Legal",
@@ -611,5 +614,266 @@
   "NotFound": {
     "title": "Page not found",
     "body": "The page you’re looking for doesn’t exist or has moved."
+  },
+  "Chat": {
+    "launcher": "Ask the assistant",
+    "title": "Caspian smart assistant",
+    "subtitle": "Automated assistant · Nadia replies personally",
+    "language": "Chat language",
+    "languageShort": {
+      "en": "EN",
+      "fa": "فا",
+      "ar": "ع"
+    },
+    "close": "Close the assistant",
+    "call": "Call Nadia",
+    "whatsapp": "WhatsApp Nadia",
+    "greeting": "Hello, I’m the Caspian smart assistant. I can answer general questions about our services and pass your request to Nadia, who will contact you personally.",
+    "askIntent": "What can we help you with? Choose an option or type it in your own words.",
+    "askIntentAgain": "If you’d like Nadia to contact you, tell me what you’re looking for:",
+    "intents": {
+      "buy_ready": "Buy a ready property",
+      "buy_off_plan": "Buy off-plan",
+      "buy": "Buy a property",
+      "sell": "Sell my property",
+      "rent": "Rent a property",
+      "let": "Let out my property",
+      "rental": "Renting or letting"
+    },
+    "clarifyBuy": "Are you looking for a ready property or an off-plan one?",
+    "clarifyRental": "Would you like to rent a property, or let out your own?",
+    "clarifyOptions": {
+      "ready": "Ready",
+      "offPlan": "Off-plan",
+      "unsure": "Not sure yet"
+    },
+    "askName": "What name should Nadia use when she contacts you?",
+    "nameInvalid": "Please type your name (letters only).",
+    "askPhone": "What’s the best phone or WhatsApp number to reach you? Please include the country code, for example +971 50 123 4567.",
+    "phoneInvalid": "That number doesn’t look complete. Please check it and include the country code, for example +971…",
+    "askCountry": "Which country is this number from?",
+    "countryOptions": {
+      "uae": "UAE (+971)",
+      "iran": "Iran (+98)",
+      "other": "Another country"
+    },
+    "summaryTitle": "Please check your details",
+    "summaryName": "Name",
+    "summaryPhone": "Phone / WhatsApp",
+    "summaryPurpose": "Looking for",
+    "change": "Change",
+    "consentNote": "This information is stored so Nadia can follow up your request.",
+    "privacyLink": "Privacy notice",
+    "submit": "Submit call request",
+    "submitting": "Submitting…",
+    "retry": "Try again",
+    "success": "Thank you, {name}. Your request has been recorded and Nadia will contact you.",
+    "successNext": "You can also reach Nadia directly now:",
+    "whatsappDraftLabel": "Your WhatsApp message (you can edit it)",
+    "whatsappDraft": "Hello Nadia, this is {name}. I’m contacting you through the Caspian website about: {purpose}.",
+    "openWhatsapp": "Open WhatsApp",
+    "whatsappNote": "WhatsApp opens with this message ready — you send it yourself.",
+    "startOver": "Start a new request",
+    "failed": "Sorry — your request could not be saved just now. Please try again, or call or message Nadia directly.",
+    "rateLimited": "There have been too many requests from this connection. Please wait a few minutes, or contact Nadia directly.",
+    "rejected": "Please take a moment to check your details, then submit again.",
+    "networkError": "Connection problem. Please try again.",
+    "thinking": "Typing…",
+    "inputLabel": "Your message",
+    "placeholder": "Type a message…",
+    "send": "Send",
+    "you": "You",
+    "bot": "Assistant",
+    "faq": {
+      "services": "Nadia advises on buying ready and off-plan property, selling, renting and letting in Dubai, and on holiday-home investments. Each engagement starts with your goals and constraints — not with a project pitch.",
+      "process": "It starts with a private consultation to agree your brief. Nadia then compares suitable strategies and options, supports due diligence and the transaction, and stays with you after handover.",
+      "about": "Nadia Fallah is a Real Estate Advisor (BRN 70350) with Caspian Properties Brokers LLC, a Dubai brokerage licensed since 2007 (licence 595102, ORN 557). The registrations can be verified with the Dubai Land Department.",
+      "languages": "Consultations are held in English and Persian.",
+      "office": "Caspian Properties Brokers LLC is a Dubai brokerage. For a meeting place and time, Nadia will confirm details with you directly.",
+      "contact": "You can call or WhatsApp Nadia using the buttons above, or leave your name and number here and she will contact you.",
+      "referToNadia": "Prices, availability, payment plans and project details change often, so Nadia gives them personally with accurate, current information. Leave your name and number and she will contact you, or call or WhatsApp her directly.",
+      "fallback": "I can help with general questions about Caspian’s services and pass your request to Nadia. For anything specific, she will answer you personally."
+    }
+  },
+  "Admin": {
+    "metaTitle": "Client panel",
+    "brand": "Caspian · Client panel",
+    "nav": {
+      "label": "Client panel",
+      "overview": "Overview",
+      "clients": "Clients",
+      "followUps": "Follow-ups",
+      "signOut": "Sign out"
+    },
+    "login": {
+      "title": "Sign in to the client panel",
+      "lead": "Enter your email address and we’ll send you a secure sign-in link.",
+      "email": "Email address",
+      "submit": "Send sign-in link",
+      "sending": "Sending…",
+      "sent": "If this address is authorised, a sign-in link is on its way. Open it on this device.",
+      "invalidEmail": "Please enter a valid email address.",
+      "error": "The link could not be sent just now. Please try again in a few minutes.",
+      "rateLimited": "Too many attempts. Please wait a few minutes and try again.",
+      "linkError": "That sign-in link is invalid or has expired. Please request a new one.",
+      "notConfigured": "Sign-in is not set up yet."
+    },
+    "forbidden": {
+      "title": "No access",
+      "body": "This account is not authorised to use the client panel."
+    },
+    "statuses": {
+      "new": "New",
+      "in_progress": "In progress",
+      "awaiting_reply": "Awaiting reply",
+      "won": "Completed (successful)",
+      "closed": "Closed (no further action)"
+    },
+    "intents": {
+      "buy_ready": "Buy — ready property",
+      "buy_off_plan": "Buy — off-plan",
+      "buy": "Buy — type not decided",
+      "sell": "Sell a property",
+      "rent": "Rent a property",
+      "let": "Let out a property",
+      "rental": "Rent or let — not decided",
+      "other": "Other / general"
+    },
+    "sources": {
+      "chatbot": "Website assistant",
+      "consultation_form": "Consultation form"
+    },
+    "overview": {
+      "title": "Overview",
+      "overdue": "Overdue follow-ups",
+      "today": "Later today",
+      "upcoming": "Upcoming follow-ups",
+      "recent": "Latest requests",
+      "none": "Nothing here.",
+      "viewAll": "View all clients"
+    },
+    "followUps": {
+      "title": "Follow-ups"
+    },
+    "clients": {
+      "title": "Clients",
+      "search": "Search by name or number",
+      "filterStatus": "Status",
+      "filterIntent": "Request type",
+      "filterFollowUp": "Follow-up",
+      "any": "All",
+      "apply": "Apply",
+      "reset": "Clear filters",
+      "followUpFilters": {
+        "overdue": "Overdue",
+        "today": "Today",
+        "upcoming": "Upcoming",
+        "none": "None set"
+      },
+      "empty": "No clients match these filters.",
+      "lastActivity": "Last activity:",
+      "count": "Clients found: {count}"
+    },
+    "client": {
+      "back": "← All clients",
+      "created": "Case opened",
+      "timezoneNote": "All times are Dubai time (GMT+4).",
+      "call": "Call",
+      "whatsapp": "WhatsApp",
+      "status": "Status",
+      "closeReason": "Short reason (for completed or closed cases)",
+      "updateStatus": "Update status",
+      "reopen": "Reopen case",
+      "saving": "Saving…",
+      "followUps": "Follow-ups",
+      "noFollowUps": "No follow-up set.",
+      "markDone": "Mark done",
+      "cancelFollowUp": "Cancel",
+      "reschedule": "Change time or note",
+      "dueAt": "Date and time (Dubai)",
+      "followUpNote": "What to follow up",
+      "saveChanges": "Save changes",
+      "setFollowUp": "Set a follow-up",
+      "saveFollowUp": "Save follow-up",
+      "pastFollowUps": "Completed or cancelled follow-ups",
+      "followUpStatus": {
+        "open": "Open",
+        "done": "Done",
+        "cancelled": "Cancelled"
+      },
+      "requests": "Requests",
+      "submittedAs": "submitted as “{name}”",
+      "notes": "Notes",
+      "saveNote": "Save note",
+      "noNotes": "No notes yet.",
+      "noteKinds": {
+        "note": "Note",
+        "call": "Call",
+        "message": "Message",
+        "meeting": "Meeting"
+      },
+      "noteKind": "Type",
+      "occurredAt": "Date and time (Dubai) — leave empty for now",
+      "noteBody": "What was discussed",
+      "outcome": "Outcome",
+      "nextAction": "Next action",
+      "editNote": "Edit",
+      "details": "Contact details",
+      "name": "Name",
+      "phone": "Phone / WhatsApp (with country code)",
+      "email": "Email",
+      "save": "Save details",
+      "history": "History"
+    },
+    "activity": {
+      "request": "New request",
+      "status_change": "Status: {from} → {to}",
+      "details_changed": "Contact details updated",
+      "follow_up_set": "Follow-up set for {date}",
+      "follow_up_changed": "Follow-up changed to {date}",
+      "follow_up_done": "Follow-up completed",
+      "follow_up_cancelled": "Follow-up cancelled"
+    },
+    "outbox": {
+      "channels": {
+        "email": "Email",
+        "telegram": "Telegram"
+      },
+      "pending": "queued",
+      "pendingSetup": "waiting for setup",
+      "processing": "sending",
+      "sent": "accepted by the service {date}",
+      "retrying": "retrying (attempt {attempts})",
+      "failed": "failed after several attempts",
+      "cancelled": "cancelled",
+      "note": "“Accepted” means the sending service took the message; it does not confirm delivery to the inbox."
+    },
+    "errors": {
+      "saved": "Saved.",
+      "generic": "This could not be saved. Please try again.",
+      "forbidden": "Your session has ended. Please sign in again.",
+      "date": "Please enter a valid date and time.",
+      "phone": "Please enter a valid number with its country code.",
+      "phoneTaken": "Another client already has this number.",
+      "name": "Please enter a name.",
+      "required": "Please write something before saving.",
+      "email": "Please enter a valid email address."
+    },
+    "notify": {
+      "newSubject": "New enquiry: {name}",
+      "reminderSubject": "Follow-up due: {name}",
+      "newHeading": "New enquiry from the website",
+      "reminderHeading": "Follow-up reminder",
+      "name": "Name",
+      "phone": "Phone",
+      "intent": "Request",
+      "details": "In their words",
+      "received": "Received (Dubai)",
+      "due": "Due (Dubai)",
+      "followUpNote": "Follow-up",
+      "latestNote": "Latest note",
+      "open": "Open the case",
+      "signInNote": "You will be asked to sign in."
+    }
   }
 }

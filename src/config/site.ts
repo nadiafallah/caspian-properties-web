@@ -46,8 +46,8 @@ export function calcomBookingUrl(leadId?: string): string | null {
 export const consultationLanguages = ["en", "fa"] as const satisfies readonly AppLocale[];
 
 /** Bump whenever the privacy notice changes materially; stored with every lead. */
-export const CONSENT_VERSION = "privacy-2026-09-22";
-export const PRIVACY_LAST_UPDATED = "2026-09-22";
+export const CONSENT_VERSION = "privacy-2026-10-02";
+export const PRIVACY_LAST_UPDATED = "2026-10-02";
 export const TERMS_LAST_UPDATED = "2026-09-22";
 
 /** Dubai Land Department public licence and permit verification (Trakheesi). */

@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState, useTransition, type FormEvent
 import { useTranslations } from "next-intl";
 import { getPathname, useRouter } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/locales";
-import { submitConsultation } from "@/app/[locale]/consultation/actions";
+import { submitConsultation } from "@/app/[locale]/(site)/consultation/actions";
 import { readAttribution } from "@/components/AttributionCapture";
 import { cx, formatNumber } from "@/lib/format";
 import {

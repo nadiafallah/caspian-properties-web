@@ -33,7 +33,9 @@ src/messages/en.json, fa.json, ar.json   ← all website text (edit wording here
 src/config/company.ts                    ← company, licence and contact details (one place for all languages)
 src/config/site.ts                       ← site settings (consultation languages, Cal.com, dates)
 src/content/                             ← curated opportunities and market insights (empty until verified)
-src/app/[locale]/…                       ← the pages
+src/app/[locale]/(site)/…                ← the public pages
+src/app/[locale]/admin/…                 ← private client panel (see docs/CLIENT_PANEL.md)
+src/components/chat/                     ← the website assistant
 src/components/                          ← building blocks (header, footer, sections, form)
 public/brand, public/credentials         ← logo (temporary) and watermarked broker-card preview
 docs/                                    ← blueprint, content inventory, integrations, launch checklist
